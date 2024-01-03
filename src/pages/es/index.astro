@@ -1,0 +1,61 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/Header.astro'
+import Translator from '@/components/Translator.astro'
+---
+
+<Layout title="Traductor de código Morse">
+    <div class="flex flex-col flex-1 w-full bg-gray-50 dark:bg-neutral-800">
+		<!-- header -->
+		<Header />
+
+		<!-- content -->
+		<Translator />
+
+		<!-- article -->
+		<div class="w-full px-2 pt-16 max-w-5xl mx-auto">
+			<article class="prose dark:prose-invert max-w-full">
+				<h2>¿Qué es el código Morse?</h2>
+				<p class="w-full">El código Morse es un método de transmitir información de texto como una serie de tonos encendidos, luces o clic.
+                    Que puede ser entendido directamente por un oyente u observador experto sin equipo especial. Es llamado
+                    Para Samuel Morse, un inventor del telégrafo.</p>
+                <h2>¿Cómo traducir el código Morse?</h2>
+                <p>El código Morse se puede traducir utilizando una tabla de alfabeto estándar que muestra los puntos y guiones correspondientes para cada letra. Por ejemplo, la letra A se representa con .-, la letra B se representa con -… y así sucesivamente. Para separar palabras, se utiliza un espacio. Para separar letras, se utiliza una barra (/).</p>
+                <h2>¿Por qué usar el código Morse?</h2>
+                <p>El código Morse tiene muchas ventajas sobre otras formas de comunicación. Se puede enviar por diversos medios, como sonido, luz, radio o cable. También se puede recibir por dispositivos simples, como un zumbador o una linterna. Es fácil de aprender y recordar, y se puede usar en situaciones en las que otros métodos no están disponibles o son confiables.</p>
+                <h2>¿Quién usa el código Morse?</h2>
+                <p>El código Morse todavía es utilizado por algunos operadores de radioaficionados, personal militar y servicios de emergencia. También se utiliza como una forma alternativa de comunicación para las personas que tienen discapacidades que les impiden hablar o escribir. Algunos ejemplos de usuarios de código Morse son Stephen Hawking, el famoso físico que usaba un interruptor para escribir código Morse, y Jean-Dominique Bauby, el autor de La escafandra y la mariposa, que dictó su libro parpadeando código Morse.</p>
+                <h2>¿Cómo aprender el código Morse?</h2>
+                <p>Hay muchas formas de aprender el código Morse, como usar herramientas en línea, aplicaciones, libros o cursos. Una de las formas más efectivas es practicar escuchando y enviando código Morse regularmente, usando una combinación de ayudas auditivas y visuales. Algunos consejos para aprender el código Morse son:</p>
+                <ul>
+                    <li>Empieza con las letras y números más comunes, como E, T, A, N, I, M, 1, 2, 3, etc.</li>
+                    <li>Aprende el alfabeto de código Morse de memoria y repásalo a menudo.</li>
+                    <li>Usa mnemotécnicos o asociaciones para recordar los puntos y rayas, como A de Apple (.-), B de Bat (-...), etc.</li>
+                    <li>Practica con palabras o frases cortas y simples, como SOS (...---...), HI (.... ..) o OK (-.- -.-).</li>
+                    <li>Aumenta la velocidad y la dificultad gradualmente y desafíate a ti mismo con textos más largos y complejos.</li>
+                    <li>Escucha el código Morse de diversas fuentes, como estaciones de radio, podcasts o videos de YouTube.</li>
+                    <li>Envía código Morse a otros, usando una llave, un silbato, una linterna o cualquier otro dispositivo que pueda hacer sonidos o señales.</li>
+                    <li>Únete a una comunidad de código Morse, como un club, un foro o una sala de chat, y comunícate con otros entusiastas del código Morse.</li>
+                </ul>
+                <h2>¡Diviértete con el código Morse!</h2>
+                <p>El código Morse no es solo una habilidad útil y práctica, sino también una forma divertida y creativa de expresarte. Puedes usar el código Morse para hacer arte, música, juegos, rompecabezas, chistes o secretos. También puedes usar el código Morse para explorar la historia, la cultura y la ciencia de la comunicación. Aquí hay algunos ejemplos de cómo puedes divertirte con el código Morse:</p>
+                <ul>
+                    <li>Crea un póster, un fondo de pantalla o un tatuaje de código Morse, usando tu cita, lema o mensaje favorito.</li>
+                    <li>Haz una canción, un tono de llamada o una alarma de código Morse, usando tu melodía, melodía o sonido favorito.</li>
+                    <li>Juega un juego de código Morse, como el ahorcado, el tres en raya o el hundir la flota, usando puntos y rayas en lugar de letras o símbolos.</li>
+                    <li>Resuelve un rompecabezas de código Morse, como un crucigrama, una sopa de letras o un sudoku, usando puntos y rayas en lugar de letras o números.</li>
+                    <li>Cuenta un chiste de código Morse, como "¿Qué obtienes cuando cruzas una oveja y una llave de código Morse? Un baabaa-dit-dit."</li>
+                    <li>Comparte un secreto de código Morse, como una contraseña, un nombre en clave o un mensaje oculto, con tus amigos, familiares o pareja.</li>
+                    <li>Descubre las historias de código Morse, como la señal de socorro del Titanic, la campaña de la V de la Victoria o el alunizaje del Apolo 11, que cambiaron el mundo.</li>
+                    <li>Aprende los hechos del código Morse, como el origen, la evolución y las variaciones del código Morse, la velocidad y la eficiencia del código Morse o la ciencia y la tecnología detrás del código Morse.</li>
+                </ul>
+			</article>
+		</div>
+ 
+		<audio id="morseAudio" src=""></audio>
+    </div>
+</Layout>
+
+
+<script is:inline src="/morse-decoder.min.js"></script>
+<script src="@/scripts/index.ts"></script>

@@ -1,0 +1,55 @@
+---
+import { languages } from '@/i18n/ui'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<!-- header -->
+<header class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-neutral-800 shadow">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-5xl">
+        <!-- logo -->
+        <a href={`/${lang === 'en' ? '' : lang}`} class="flex items-center">
+            <img src="/logo.png" class="mr-2 h-10" alt="MorseCode Logo" />
+            <h1 class="text-2xl self-center font-semibold whitespace-nowrap dark:text-white">{t('title')}</h1>
+        </a>
+        
+        <div class="navbar flex">
+            <!-- language button -->
+            <div class="navbar-item relative">
+                <button id="languageBtn" class="inline-flex justify-center rounded-md bg-black/20 px-4 py-2 text-xs font-medium text-white hover:bg-black/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
+                    </svg>
+                    <span class="ml-2">{languages[lang]}</span>
+                </button>
+
+                <!-- 多语言切换下拉列表 -->
+                <div id="languageMenu" class="navbar-menu absolute top-8 right-0 mt-2 w-56 origin-top-right divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 transform scale-0 focus:outline-none">
+                    <ul class="px-1 py-1">
+                        <li><a class="flex w-full items-center rounded-md px-2 py-2 text-gray-900 text-sm hover:bg-black/30" href="/">English</a></li>
+                        <li><a class="flex w-full items-center rounded-md px-2 py-2 text-gray-900 text-sm hover:bg-black/30" href="/de">Deutsch</a></li>
+                        <li><a class="flex w-full items-center rounded-md px-2 py-2 text-gray-900 text-sm hover:bg-black/30" href="/fr">Français</a></li>
+                        <li><a class="flex w-full items-center rounded-md px-2 py-2 text-gray-900 text-sm hover:bg-black/30" href="/es">Español</a></li>
+                        <li><a class="flex w-full items-center rounded-md px-2 py-2 text-gray-900 text-sm hover:bg-black/30" href="/pt">Português</a></li>
+                        <li><a class="flex w-full items-center rounded-md px-2 py-2 text-gray-900 text-sm hover:bg-black/30" href="/it">Italiano</a></li>
+                        <li><a class="flex w-full items-center rounded-md px-2 py-2 text-gray-900 text-sm hover:bg-black/30" href="/pl">Polski</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="navbar-item ml-4">
+                <button id="lightMode" class="inline-flex justify-center rounded-md bg-black/20 px-4 py-2 text-xs font-medium text-white hover:bg-black/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
+                    <svg id="darkIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                        <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+                    </svg>
+                    <svg id="lightIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 hidden">
+                        <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+                    </svg>
+                    <span id="lightModeText" class="ml-2">{t('mode.dark')}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>

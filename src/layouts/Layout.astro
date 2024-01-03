@@ -1,0 +1,61 @@
+---
+import { getLangFromUrl } from '@/i18n/utils'
+interface Props {
+	title: string
+}
+
+const { title } = Astro.props
+const lang = getLangFromUrl(Astro.url)
+---
+
+<!-- index.html -->
+
+<!doctype html>
+<html lang={lang}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A website that can translate text to Morse code and play it as audio.">
+    <meta name="keywords" content="Morse code, translator, audio, language, text">
+	<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <!-- <link href="/dist/output.css" rel="stylesheet"> -->
+</head>
+<body>
+	<slot />
+</body>
+</html>
+
+<style is:global>
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+	}
+	/* html {
+		font-family: system-ui, sans-serif;
+		background: #13151a;
+		background-size: 224px;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	} */
+	.active {
+		transform: scaleY(1);
+		opacity: 1;
+	}
+</style>

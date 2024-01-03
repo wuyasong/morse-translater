@@ -1,0 +1,61 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/Header.astro'
+import Translator from '@/components/Translator.astro'
+---
+
+<Layout title="Traducteur de code Morse">
+    <div class="flex flex-col flex-1 w-full bg-gray-50 dark:bg-neutral-800">
+		<!-- header -->
+		<Header />
+
+		<!-- content -->
+		<Translator />
+
+		<!-- article -->
+		<div class="w-full px-2 pt-16 max-w-5xl mx-auto">
+			<article class="prose dark:prose-invert max-w-full">
+				<h2>Qu’est-ce que le code Morse?</h2>
+				<p class="w-full">Le code Morse est une méthode de transmission d’informations textuelles sous forme d’une série de tonalités, de lumières ou de clics
+                    Qui peut être directement compris par un auditeur ou un observateur qualifié sans équipement spécial. Il est nommé
+                    Pour Samuel F. B. Morse, inventeur du télégraphe.</p>
+                <h2>Comment traduire le code Morse ?</h2>
+                <p>Le code Morse peut être traduit en utilisant une table d’alphabet standard qui montre les points et les tirets correspondant à chaque lettre. Par exemple, la lettre A est représentée par .-, la lettre B est représentée par -… et ainsi de suite. Pour séparer les mots, un espace est utilisé. Pour séparer les lettres, une barre oblique (/) est utilisée.</p>
+                <h2>Pourquoi utiliser le code Morse ?</h2>
+                <p>Le code Morse présente de nombreux avantages par rapport aux autres formes de communication. Il peut être envoyé par divers moyens, tels que le son, la lumière, la radio ou le fil. Il peut également être reçu par des dispositifs simples, comme un buzzer ou une lampe de poche. Il est facile à apprendre et à retenir, et il peut être utilisé dans des situations où les autres méthodes ne sont pas disponibles ou fiables.</p>
+                <h2>Qui utilise le code Morse ?</h2>
+                <p>Le code Morse est encore utilisé par certains radioamateurs, militaires et services d’urgence. Il sert également de moyen de communication alternatif pour les personnes qui ont des handicaps qui les empêchent de parler ou d’écrire. Quelques exemples d’utilisateurs de code Morse sont Stephen Hawking, le célèbre physicien qui utilisait un interrupteur pour taper du code Morse, et Jean-Dominique Bauby, l’auteur du Scaphandre et le papillon, qui a dicté son livre en clignant du code Morse.</p>
+                <h2>Comment apprendre le code Morse ?</h2>
+                <p>Il existe de nombreuses façons d'apprendre le code Morse, comme utiliser des outils en ligne, des applications, des livres ou des cours. L'une des façons les plus efficaces est de s'entraîner à écouter et à envoyer du code Morse régulièrement, en utilisant une combinaison d'aides auditives et visuelles. Voici quelques conseils pour apprendre le code Morse :</p>
+                <ul>
+                    <li>Commencez par les lettres et les chiffres les plus courants, comme E, T, A, N, I, M, 1, 2, 3, etc.</li>
+                    <li>Apprenez l'alphabet du code Morse par cœur et révisez-le souvent.</li>
+                    <li>Utilisez des moyens mnémotechniques ou des associations pour vous souvenir des points et des tirets, comme A pour Apple (.-), B pour Bat (-...), etc.</li>
+                    <li>Pratiquez avec des mots ou des phrases courts et simples, comme SOS (...---...), HI (.... ..) ou OK (-.- -.-).</li>
+                    <li>Augmentez la vitesse et la difficulté progressivement et défiez-vous avec des textes plus longs et plus complexes.</li>
+                    <li>Écoutez du code Morse provenant de diverses sources, comme des stations de radio, des podcasts ou des vidéos YouTube.</li>
+                    <li>Envoyez du code Morse à d'autres, en utilisant une clé, un sifflet, une lampe de poche ou tout autre appareil pouvant faire des sons ou des signaux.</li>
+                    <li>Rejoignez une communauté de code Morse, comme un club, un forum ou une salle de chat, et communiquez avec d'autres passionnés de code Morse.</li>
+                </ul>
+                <h2>Amusez-vous avec le code Morse !</h2>
+                <p>Le code Morse n'est pas seulement une compétence utile et pratique, mais aussi une façon amusante et créative de vous exprimer. Vous pouvez utiliser le code Morse pour faire de l'art, de la musique, des jeux, des puzzles, des blagues ou des secrets. Vous pouvez également utiliser le code Morse pour explorer l'histoire, la culture et la science de la communication. Voici quelques exemples de comment vous pouvez vous amuser avec le code Morse :</p>
+                <ul>
+                    <li>Créez une affiche, un fond d'écran ou un tatouage en code Morse, en utilisant votre citation, devise ou message préféré.</li>
+                    <li>Faites une chanson, une sonnerie ou une alarme en code Morse, en utilisant votre mélodie, mélodie ou son préféré.</li>
+                    <li>Jouez à un jeu de code Morse, comme le pendu, le morpion ou la bataille navale, en utilisant des points et des tirets au lieu de lettres ou de symboles.</li>
+                    <li>Résolvez une énigme en code Morse, comme un mot croisé, un mot caché ou un sudoku, en utilisant des points et des tirets au lieu de lettres ou de chiffres.</li>
+                    <li>Racontez une blague en code Morse, comme "Que obtenez-vous quand vous croisez un mouton et une clé de code Morse ? Un baabaa-dit-dit."</li>
+                    <li>Partagez un secret en code Morse, comme un mot de passe, un nom de code ou un message caché, avec vos amis, votre famille ou votre partenaire.</li>
+                    <li>Découvrez les histoires de code Morse, comme le signal de détresse du Titanic, la campagne de la V de la Victoire ou l'atterrissage sur la lune d'Apollo 11, qui ont changé le monde.</li>
+                    <li>Apprenez les faits sur le code Morse, comme l'origine, l'évolution et les variations du code Morse, la vitesse et l'efficacité du code Morse ou la science et la technologie derrière le code Morse.</li>
+                </ul>
+			</article>
+		</div>
+ 
+		<audio id="morseAudio" src=""></audio>
+    </div>
+</Layout>
+
+
+<script is:inline src="/morse-decoder.min.js"></script>
+<script src="@/scripts/index.ts"></script>
