@@ -1,86 +1,151 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/Header.astro'
-import Translator from '@/components/Translator.astro'
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Translator from "@/components/Translator.astro";
 ---
 
 <Layout title="Morse Code Translator">
-    <div class="flex flex-col flex-1 w-full bg-gray-50 dark:bg-neutral-800">
-		<!-- header -->
-		<Header />
+  <div class="flex flex-col flex-1 w-full bg-gray-50 dark:bg-neutral-800">
+    <!-- header -->
+    <Header />
 
-		<!-- content -->
-		<Translator />
+    <!-- content -->
+    <Translator />
 
-		<!-- article -->
-		<div class="w-full px-2 pt-16 max-w-5xl mx-auto">
-			<article class="prose dark:prose-invert max-w-full">
-				<h2>What is Morse code?</h2>
-				<p class="w-full">Morse code is a method of transmitting text information as a series of on-off tones, lights, or clicks
-					that can be directly understood by a skilled listener or observer without special equipment. It is named
-					for Samuel F. B. Morse, an inventor of the telegraph.</p>
-				<h2>How to translate Morse code?</h2>
-				<p>Morse code can be translated by using a standard alphabet table that shows the corresponding dots and
-					dashes for each letter. For example, the letter A is represented by .-, the letter B is represented by
-					-..., and so on. To separate words, a space is used. To separate letters, a slash (/) is used.</p>
-				<h2>Why use Morse code?</h2>
-				<p>Morse code has many advantages over other forms of communication. It can be sent by various means such as
-					sound, light, radio, or wire. It can also be received by simple devices such as a buzzer or a
-					flashlight. It is easy to learn and remember, and it can be used in situations where other methods are
-					not available or reliable.</p>
-				<h2>Who uses Morse code?</h2>
-				<p>Morse code is still used by some amateur radio operators, military personnel, and emergency services. It
-					is also used as an alternative way of communication for people who have disabilities that prevent them
-					from speaking or writing. Some examples of Morse code users are Stephen Hawking, the famous physicist
-					who used a switch to type Morse code, and Jean-Dominique Bauby, the author of The Diving Bell and the
-					Butterfly, who dictated his book by blinking Morse code.</p>
-				<h2>How to learn Morse code?</h2>
-				<p>There are many ways to learn Morse code, such as using online tools, apps, books, or courses. One of the
-					most effective ways is to practice listening and sending Morse code regularly, using a combination of
-					audio and visual aids. Some tips for learning Morse code are:</p>
-				<ul>
-					<li>Start with the most common letters and numbers, such as E, T, A, N, I, M, 1, 2, 3, etc.</li>
-					<li>Learn the Morse code alphabet by heart, and review it often.</li>
-					<li>Use mnemonics or associations to remember the dots and dashes, such as A for Apple (.-), B for Bat
-						(-...), etc.</li>
-					<li>Practice with short and simple words or phrases, such as SOS (...---...), HI (.... ..), or OK (-.-
-						-.-).</li>
-					<li>Increase the speed and difficulty gradually, and challenge yourself with longer and more complex
-						texts.</li>
-					<li>Listen to Morse code from various sources, such as radio stations, podcasts, or YouTube videos.</li>
-					<li>Send Morse code to others, using a key, a whistle, a flashlight, or any other device that can make
-						sounds or signals.</li>
-					<li>Join a Morse code community, such as a club, a forum, or a chat room, and communicate with other
-						Morse code enthusiasts.</li>
-				</ul>
-				<h2>Have fun with Morse code!</h2>
-				<p>Morse code is not only a useful and practical skill, but also a fun and creative way of expressing
-					yourself. You can use Morse code to make art, music, games, puzzles, jokes, or secrets. You can also use
-					Morse code to explore the history, culture, and science of communication. Here are some examples of how
-					you can have fun with Morse code:</p>
-				<ul>
-					<li>Create a Morse code poster, wallpaper, or tattoo, using your favorite quote, motto, or message.</li>
-					<li>Make a Morse code song, ringtone, or alarm, using your favorite tune, melody, or sound.</li>
-					<li>Play a Morse code game, such as Hangman, Tic-Tac-Toe, or Battleship, using dots and dashes instead
-						of letters or symbols.</li>
-					<li>Solve a Morse code puzzle, such as a crossword, a word search, or a sudoku, using dots and dashes
-						instead of letters or numbers.</li>
-					<li>Tell a Morse code joke, such as "What do you get when you cross a sheep and a Morse code key? A
-						baabaa-dit-dit."</li>
-					<li>Share a Morse code secret, such as a password, a code name, or a hidden message, with your friends,
-						family, or partner.</li>
-					<li>Discover the Morse code stories, such as the Titanic distress signal, the V for Victory campaign, or
-						the Apollo 11 moon landing, that changed the world.</li>
-					<li>Learn the Morse code facts, such as the origin, evolution, and variations of Morse code, the speed
-						and efficiency of Morse code, or the science and technology behind Morse code.</li>
-				</ul>
-			</article>
-		</div>
-
-		<audio id="morseAudio" src=""></audio>
+    <!-- article -->
+    <div class="w-full px-2 pt-16 max-w-5xl mx-auto">
+      <article class="prose dark:prose-invert max-w-full">
+        <h2>What is Morse code?</h2>
+        <p class="w-full">
+          Morse code is a method of transmitting text information as a series of
+          on-off tones, lights, or clicks that can be directly understood by a
+          skilled listener or observer without special equipment. It is named
+          for Samuel F. B. Morse, an inventor of the telegraph.
+        </p>
+        <h2>How to translate Morse code?</h2>
+        <p>
+          Morse code can be translated by using a standard alphabet table that
+          shows the corresponding dots and dashes for each letter. For example,
+          the letter A is represented by .-, the letter B is represented by
+          -..., and so on. To separate words, a space is used. To separate
+          letters, a slash (/) is used.
+        </p>
+        <h2>Why use Morse code?</h2>
+        <p>
+          Morse code has many advantages over other forms of communication. It
+          can be sent by various means such as sound, light, radio, or wire. It
+          can also be received by simple devices such as a buzzer or a
+          flashlight. It is easy to learn and remember, and it can be used in
+          situations where other methods are not available or reliable.
+        </p>
+        <h2>Who uses Morse code?</h2>
+        <p>
+          Morse code is still used by some amateur radio operators, military
+          personnel, and emergency services. It is also used as an alternative
+          way of communication for people who have disabilities that prevent
+          them from speaking or writing. Some examples of Morse code users are
+          Stephen Hawking, the famous physicist who used a switch to type Morse
+          code, and Jean-Dominique Bauby, the author of The Diving Bell and the
+          Butterfly, who dictated his book by blinking Morse code.
+        </p>
+        <h2>How to learn Morse code?</h2>
+        <p>
+          There are many ways to learn Morse code, such as using online tools,
+          apps, books, or courses. One of the most effective ways is to practice
+          listening and sending Morse code regularly, using a combination of
+          audio and visual aids. Some tips for learning Morse code are:
+        </p>
+        <ul>
+          <li>
+            Start with the most common letters and numbers, such as E, T, A, N,
+            I, M, 1, 2, 3, etc.
+          </li>
+          <li>Learn the Morse code alphabet by heart, and review it often.</li>
+          <li>
+            Use mnemonics or associations to remember the dots and dashes, such
+            as A for Apple (.-), B for Bat (-...), etc.
+          </li>
+          <li>
+            Practice with short and simple words or phrases, such as SOS
+            (...---...), HI (.... ..), or OK (-.- -.-).
+          </li>
+          <li>
+            Increase the speed and difficulty gradually, and challenge yourself
+            with longer and more complex texts.
+          </li>
+          <li>
+            Listen to Morse code from various sources, such as radio stations,
+            podcasts, or YouTube videos.
+          </li>
+          <li>
+            Send Morse code to others, using a key, a whistle, a flashlight, or
+            any other device that can make sounds or signals.
+          </li>
+          <li>
+            Join a Morse code community, such as a club, a forum, or a chat
+            room, and communicate with other Morse code enthusiasts.
+          </li>
+        </ul>
+        <h2>Have fun with Morse code!</h2>
+        <p>
+          Morse code is not only a useful and practical skill, but also a fun
+          and creative way of expressing yourself. You can use Morse code to
+          make art, music, games, puzzles, jokes, or secrets. You can also use
+          Morse code to explore the history, culture, and science of
+          communication. Here are some examples of how you can have fun with
+          Morse code:
+        </p>
+        <ul>
+          <li>
+            Create a Morse code poster, wallpaper, or tattoo, using your
+            favorite quote, motto, or message.
+          </li>
+          <li>
+            Make a Morse code song, ringtone, or alarm, using your favorite
+            tune, melody, or sound.
+          </li>
+          <li>
+            Play a Morse code game, such as Hangman, Tic-Tac-Toe, or Battleship,
+            using dots and dashes instead of letters or symbols.
+          </li>
+          <li>
+            Solve a Morse code puzzle, such as a crossword, a word search, or a
+            sudoku, using dots and dashes instead of letters or numbers.
+          </li>
+          <li>
+            Tell a Morse code joke, such as "What do you get when you cross a
+            sheep and a Morse code key? A baabaa-dit-dit."
+          </li>
+          <li>
+            Share a Morse code secret, such as a password, a code name, or a
+            hidden message, with your friends, family, or partner.
+          </li>
+          <li>
+            Discover the Morse code stories, such as the Titanic distress
+            signal, the V for Victory campaign, or the Apollo 11 moon landing,
+            that changed the world.
+          </li>
+          <li>
+            Learn the Morse code facts, such as the origin, evolution, and
+            variations of Morse code, the speed and efficiency of Morse code, or
+            the science and technology behind Morse code.
+          </li>
+        </ul>
+      </article>
     </div>
-</Layout>
 
+    <audio id="morseAudio" src=""></audio>
+  </div>
+  <div>
+    <h3>Friends</h3>
+    <a href="https://aiwallpaper.cc" title="AI Wallpaper Generator"
+      >AI Wallpaper Generator</a
+    >
+    <a href="https://githubprofile.com" title="Github Profile Readme Generator"
+      >Github Profile Readme Generator"</a
+    >
+  </div>
+</Layout>
 
 <script is:inline src="/morse-decoder.min.js"></script>
 <script src="@/scripts/index.ts"></script>
